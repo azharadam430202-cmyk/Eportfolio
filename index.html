@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azhar Bin Adam | Professional Portfolio</title>
+    <style>
+        /* Importing strong, geometric, and professional fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            /* Masculine, Professional, Corporate Theme */
+            --bg-body: #F4F6F8; /* Crisp light grey */
+            --bg-card: #FFFFFF;
+            --text-main: #1A202C; /* Near black */
+            --text-muted: #4A5568; /* Slate grey */
+            --primary: #0F172A; /* Deep Navy/Charcoal */
+            --secondary: #2563EB; /* Strong Royal Blue */
+            --border: #E2E8F0;
+            --accent: #38BDF8; /* Sharp sky blue for precise highlights */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4, nav a {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body, p, li, span {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Strong, dynamic professional header */
+        @keyframes subtleShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #0F172A, #1E293B, #0F172A, #000000);
+            background-size: 400% 400%;
+            animation: subtleShift 20s ease infinite;
+            padding: 90px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--secondary);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .profile-img-container {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Sharp, authoritative picture styling */
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 8px; /* Slightly squared for a sharper look */
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            background-color: var(--primary);
+        }
+
+        .profile-img:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #CBD5E1;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info span:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            color: #FFF;
+        }
+
+        /* Sleek, structured navigation */
+        nav {
+            background-color: var(--bg-card);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            padding: 20px 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            position: relative;
+        }
+
+        /* Precision underline animation */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: right;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+            background-color: #F8FAFC;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: var(--bg-card);
+            padding: 45px;
+            margin-bottom: 40px;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+            margin-left: 20px;
+        }
+
+        h4 {
+            color: var(--text-main);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .skills-container {
+            margin-top: 20px;
+        }
+
+        /* Engineered, sharp skill bars */
+        .skill-bar {
+            background-color: #F1F5F9;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 28px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-level {
+            height: 100%;
+            width: 0; 
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+            white-space: nowrap;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .timeline {
+            border-left: 2px solid var(--border);
+            padding-left: 30px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        /* Clean timeline nodes */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--bg-card);
+            border: 3px solid var(--secondary);
+            border-radius: 2px; /* Square nodes for a structured look */
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background-color: var(--secondary);
+            transform: scale(1.2) rotate(45deg); /* Professional sharp interaction */
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: #FAFAFA;
+            padding: 30px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            border-color: #CBD5E1;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--primary);
+            color: #94A3B8;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            nav {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            nav a {
+                padding: 15px 20px;
+                white-space: nowrap;
+            }
+            section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-img-container">
+            <img src="Azhar Bin Adam_078501.jpg" alt="Azhar Bin Adam" class="profile-img">
+        </div>
+        
+        <h1>AZHAR BIN ADAM</h1>
+        <h2>Aspiring Cloud Security Engineer</h2>
+        <div class="contact-info">
+            <span>azharadam430202@gmail.com</span>
+            <span>+60 19 623 4302</span>
+            <span>Malaysia</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#exploration">Exploration</a>
+        <a href="#skills">Skills Assessment</a>
+        <a href="#development">Strategic Plan</a>
+        <a href="#evidence">Credentials</a>
+        <a href="#reflection">Reflection</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Section A: Career Exploration -->
+        <section id="exploration">
+            <h3>Career Exploration</h3>
+            <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 25px;">As organizations transition their infrastructure and critical data to the cloud, the perimeter of modern cybersecurity has expanded. A Cloud Security Engineer operates as the frontline defense in this decentralized landscape, ensuring absolute data integrity.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h4>Core Responsibilities</h4>
+                    <ul>
+                        <li>Designing and implementing robust, secure cloud infrastructure (Azure, AWS).</li>
+                        <li>Architecting identity and access controls (IAM) across enterprise environments.</li>
+                        <li>Monitoring for threat detection and executing rapid incident response protocols.</li>
+                        <li>Ensuring data transmitted from edge nodes to cloud databases maintains strict encryption and compliance.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Required Competencies</h4>
+                    <ul>
+                        <li>Advanced proficiency in cloud platforms and virtualization frameworks (VMWare).</li>
+                        <li>Deep comprehension of network protocols, firewalls, and secure routing.</li>
+                        <li>Automation scripting (Python, Bash) for seamless security integrations.</li>
+                        <li><strong>Strategic Relevance:</strong> Securing data pipelines from physical IoT endpoints (e.g., ESP32 nodes) to cloud backends is a critical mandate in modern cyber defense.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B: Personal Skills Assessment -->
+        <section id="skills">
+            <h3>Skills Assessment</h3>
+            <div class="grid-2">
+                <div>
+                    <h4>Technical Proficiencies</h4>
+                    <div class="skills-container">
+                        <div class="skill-bar"><div class="skill-level" data-width="80%">Oracle VMWare (80%)</div></div>
+                        <div class="skill-bar"><div class="skill-level" data-width="70%">HTML / Front-End (70%)</div></div>
+                        <div class="skill-bar"><div class="skill-level" data-width="65%">C++ & Microcontrollers (65%)</div></div>
+                        <div class="skill-bar"><div class="skill-level" data-width="60%">XAMPP / MySQL (60%)</div></div>
+                        <div class="skill-bar"><div class="skill-level" data-width="75%">Flutter & Firebase (75%)</div></div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Professional Analysis</h4>
+                    <div class="card" style="border-left: 3px solid var(--primary);">
+                        <strong>Soft Skills & Execution:</strong>
+                        <p style="margin-top: 10px; color: var(--text-muted);">Highly developed communication skills coupled with autonomous problem solving capabilities. Proven track record of operating efficiently in fast paced, high pressure environments, refined through direct technical client interaction at A to Z Computer.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #E11D48;">
+                        <strong>Industry Gap Analysis:</strong>
+                        <p style="margin-top: 10px; color: var(--text-muted);">While possessing a strong foundation in programming, IoT deployment, and virtualization, transitioning to a dedicated Cloud Security Engineer requires deeper tactical expertise with enterprise security tools (e.g., Wireshark) and specialized cybersecurity certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section C: Career Development Plan -->
+        <section id="development">
+            <h3>Strategic Development Plan</h3>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">A disciplined, structured roadmap executing the transition from IT/Networking academics to a professional Cloud Security Engineering authority.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h4>Target Certifications</h4>
+                    <ul>
+                        <li><strong>CompTIA Security+:</strong> Establishing a verifiable, core baseline in modern cybersecurity principles.</li>
+                        <li><strong>Microsoft Cybersecurity Architect / AWS Certified Security:</strong> Leveraging existing Azure AI Fundamentals to specialize deeply in cloud defense mechanisms.</li>
+                        <li><strong>Tool Mastery:</strong> Wireshark (deep packet analysis), Linux (server hardening), and Python (security automation).</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 1: Short-Term (1-2 Years)</div>
+                            <p style="color: var(--text-muted);">Complete UniSZA Final Year Project (FlowGuard) with a strict emphasis on secure data routing. Secure a Junior IT Support or SOC Analyst role to build operational security experience.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Phase 2: Long-Term (3-5 Years)</div>
+                            <p style="color: var(--text-muted);">Acquire advanced cloud specific security certifications. Transition into a dedicated Cloud Security Engineer role, commanding secure enterprise architectures and managing active threat intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section D: Evidence of Learning -->
+        <section id="evidence">
+            <h3>Credentials & Evidence</h3>
+            
+            <div class="grid-2" style="margin-top: 25px;">
+                <div class="card">
+                    <h4>Academic Background</h4>
+                    <ul style="list-style-type: square;">
+                        <li><strong>UniSZA (July 2023 - Feb 2025):</strong> Pursuing degree with intensive coursework in Wireless Network & Communication and Cloud Computing. Current CGPA: 3.17.</li>
+                        <li><strong>Kolej Poly-Tech Mara (July 2020 - Nov 2022):</strong> Completed diploma. CGPA: 3.68.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>Practical Deployments</h4>
+                    <ul style="list-style-type: square;">
+                        <li><strong>FlowGuard (IoT Architecture):</strong> Engineered a smart IoT based flood monitoring and road rerouting application utilizing ESP32/ESP8266 microcontrollers, Flutter, and Firebase.</li>
+                        <li><strong>Microsoft Certified:</strong> Azure AI Fundamentals training program.</li>
+                        <li><strong>Professional Tenure:</strong> 4 months serving as an IT Technician at A to Z Computer, executing hardware diagnostics and system restorations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E: Personal Reflection -->
+        <section id="reflection">
+            <h3>Professional Reflection</h3>
+            <div style="background: #F1F5F9; border: 1px solid var(--border); padding: 10px 20px; display: inline-block; border-radius: 4px; margin-bottom: 25px;">
+                <h4 style="margin: 0; border: none; font-size: 1.1rem;">Target Enterprise: Microsoft Malaysia</h4>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <p style="color: var(--text-muted);"><strong>Strategic Alignment:</strong><br>
+                    Microsoft dictates the forefront of enterprise cloud infrastructure via Azure. The corporation's aggressive investment in cloud security, AI integration, and IoT infrastructure directly parallels my academic trajectory and practical project history.</p>
+                    
+                    <p style="margin-top: 20px; color: var(--text-muted);"><strong>Value Proposition:</strong><br>
+                    I deliver a unique hybrid of hardware-level comprehension (C++, microcontrollers) and cloud/front end development (VMWare, Flutter, Firebase). This grants me the capability to view network security holistically identifying vulnerabilities from the physical edge node up through the cloud server architecture.</p>
+                </div>
+                
+                <div class="card">
+                    <p style="color: var(--text-muted);"><strong>Operational Strengths:</strong><br>
+                    My primary assets are rapid adaptability, autonomous problem solving, and grounded troubleshooting expertise gained in the field. My current limitation is a lack of enterprise scale incident response exposure, which I am actively neutralizing by pursuing specialized certifications like Security+.</p>
+                    
+                    <p style="margin-top: 20px; color: var(--text-muted);"><strong>Hiring Justification:</strong><br>
+                    I am a practical executor, not just a conceptual academic. I possess hands on experience diagnosing hardware in high pressure environments and building full stack applications from scratch. This ensures I comprehend the real world operational impact of security policies on engineers and end-users.</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Azhar Bin Adam. Prepared for CSA30203 Special Topics in Computer Network Security.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.15 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        if (entry.target.id === 'skills') {
+                            setTimeout(() => {
+                                const skillBars = entry.target.querySelectorAll('.skill-level');
+                                skillBars.forEach(bar => {
+                                    const targetWidth = bar.getAttribute('data-width');
+                                    bar.style.width = targetWidth;
+                                });
+                            }, 150);
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
